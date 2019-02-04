@@ -19,6 +19,8 @@ public:
 Stack(){
     top = NULL;
     }
+        
+        
 void push(T data){
         Node *temp = new Node;
         temp->data = data;
@@ -41,15 +43,15 @@ void pop(){
 T returnTop(){
         return top->data;
     }
-
-
-
+        
 
 bool isEmpty(){
         if(top == NULL)
         return true;
         else return false;
     }
+        
+        
 int search(T data){
         Node *temp = top;
         int count = 0;
