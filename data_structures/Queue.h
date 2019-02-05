@@ -50,10 +50,13 @@ bool isEmpty(){
             else return false;
     }
 ~Queue(){
+    
+        Node *temp = front;
         while(temp)
         {
-            Node *temp = front;
+            temp = front;
             front = front->next;
+            std::cout<<"Deleted "<<temp->data<<"\n";
             delete temp;
         }
     }
