@@ -1,4 +1,5 @@
 #pragma once
+#include<iostream>
 
 template <typename T>
 class Stack{
@@ -67,13 +68,24 @@ int search(T data){
 
 ~Stack()
 {
-    Node *temp = top;
     while(temp)
     {
-        temp = top;
-        top = top->down;
+        Node *temp = top;
+        top = top->next;
         std::cout<<"Deleted "<<temp->data<<"\n";
         delete temp;
     }
 }
 };
+
+
+int main()
+    {
+        Stack<int> S;
+    S.push(3);
+    S.push(4);
+    S.push(23);
+    S.push(31);
+    return 0;
+    
+}
