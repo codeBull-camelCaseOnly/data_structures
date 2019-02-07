@@ -1,19 +1,72 @@
 #pragma once
 #include<memory>
+#include<iostream>
 
 template <typename T>
 class BinarySearchTree{
 
 struct Node{
         T data;
-        std::unique_ptr<Node> left,right;
-        //Same as "Node *left, *right" but More safer
+        Node *left, *right;
 
+        Node()
+        {
+            left = right = NULL;
+        }
+
+        void print(){
+            if(left != NULL)
+                left->print();
+            std::cout << data <<" ";
+            if(right != NULL)
+                right->print();
+        }
     }*Root;
 
 
+
 public:
-void insert(T data)
-bool search(T data)
-void deleteLastNode
+BinarySearchTree(){
+        Root = NULL;
+    }
+void insert(T data){
+        bool added = false;
+        std::unique_ptr<Node> temp (new Node());
+        temp->data = data;
+
+        Node *top = root;
+
+        while(!added)
+        {
+            if(top = NULL)
+            {
+                top = temp;   
+            }
+            else
+            {
+                    if(top->data <= data){
+                        if(top->left = NULL)
+                            top->left = temp;
+                        else
+                            top = top->left;
+                    }
+
+                    else{
+                        if(top->right = NULL)
+                            top->right = temp;
+                        else
+                            top = top->right;
+                    }
+            }
+            
+        }
+
+
+    }
+
+
+
+void print(){
+        root->print();
+    }
 };
