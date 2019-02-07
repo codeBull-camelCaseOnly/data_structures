@@ -21,17 +21,18 @@ struct Node{
             if(right != NULL)
                 right->print();
         }
-    }*Root;
+    }*root;
 
 
 
 public:
 BinarySearchTree(){
-        Root = NULL;
+        root = NULL;
     }
 void insert(T data){
         bool added = false;
-        std::unique_ptr<Node> temp (new Node());
+        Node *temp = new Node();
+        //std::unique_ptr<Node> temp(new Node());
         temp->data = data;
 
         Node *top = root;
